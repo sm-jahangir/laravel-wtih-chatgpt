@@ -19,5 +19,9 @@ Route::get('/', function () {
 });
 Route::get('/chatgpt', [ChatGPTController::class, 'index'])
     ->name('chatgpt.index');
+
 Route::post('/chatgpt/ask', [ChatGPTController::class, 'ask'])
     ->name('chatgpt.ask');
+
+Route::view('/chat', 'openai.chat');
+Route::post('/chat', [ChatGPTController::class, 'chat'])->name('chatgpt.chat');
