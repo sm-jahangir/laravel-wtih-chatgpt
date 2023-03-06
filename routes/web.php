@@ -25,3 +25,7 @@ Route::post('/chatgpt/ask', [ChatGPTController::class, 'ask'])
 
 Route::view('/chat', 'openai.chat');
 Route::post('/chat', [ChatGPTController::class, 'chat'])->name('chatgpt.chat');
+
+
+Route::view('/open/chat', 'openai.openchat');
+Route::post('/open/chat', [ChatGPTController::class, 'chat'])->name('chatgpt.api');
